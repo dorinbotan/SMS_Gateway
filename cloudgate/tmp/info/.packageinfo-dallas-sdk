@@ -1,0 +1,19 @@
+Source-Makefile: package/dallas-sdk/Makefile
+Package: dallas-sdk
+Version: 310-r2
+Depends: +kmod-cortex
+Provides: 
+Section: iButton-3rd-party
+Category: iButton-3rd-party
+Title: Owire Public Domain Kit
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: owpd310r2.zip
+Type: ipkg
+Description: Owire Public Domain Kit
+http://files.maximintegrated.com/sia_bu/public/
+@@
+Config:
+	source "package/dallas-sdk/Config.in"
+@@
+
+

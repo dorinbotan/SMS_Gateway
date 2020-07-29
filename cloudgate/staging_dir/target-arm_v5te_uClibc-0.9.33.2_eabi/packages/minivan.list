@@ -1,0 +1,11 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/minivand
+./usr/include
+./usr/include/minivan
+./usr/include/minivan/minivan_client.h
+./usr/include/minivan/mv_dmalloc.h
+./usr/lib
+./usr/lib/libminivan.so

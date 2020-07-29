@@ -1,0 +1,13 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/GobiConnectionMgmt
+./usr/include/GobiConnectionMgmt/GobiConnectionMgmtAPIStructs.h
+./usr/include/GobiConnectionMgmt/GobiConnectionMgmtAPIEnums.h
+./usr/include/GobiConnectionMgmt/GobiConnectionMgmtAPI.h
+./usr/include/gobiapi
+./usr/include/gobiapi/gobiapi.h
+./usr/lib
+./usr/lib/libgobiapi.so
+./usr/lib/libGobiConnectionMgmt.so

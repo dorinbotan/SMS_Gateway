@@ -1,0 +1,8 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/conf
+./usr/include/conf/conf.h
+./usr/lib
+./usr/lib/libconf.so

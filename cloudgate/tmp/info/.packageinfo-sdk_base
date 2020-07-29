@@ -1,0 +1,124 @@
+Source-Makefile: package/sdk_base/Makefile
+Package: libreadline
+Version: 1.2.3-5
+Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Title: Command lines edition library
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: Command lines edition library
+http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
+@@
+
+Package: librt
+Version: 1.2.3-5
+Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Title: POSIX.1b RealTime extension library
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: POSIX.1b RealTime extension library
+@@
+
+Package: zlib
+Version: 1.2.3-5
+Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Title: Library implementing the deflate compression method
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: Library implementing the deflate compression method
+http://www.zlib.net/
+@@
+
+Package: libpthread
+Version: 1.2.3-5
+Depends: +librt
+Provides: 
+Section: libs
+Category: Libraries
+Title: POSIX thread library
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: POSIX thread library
+@@
+
+Package: libopenssl
+Version: 1.2.3-5
+Depends: +zlib
+Provides: 
+Section: libs
+Category: Libraries
+Title:  (libraries)
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description:  (libraries)
+@@
+
+Package: libtool
+Version: 1.2.3-5
+Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Title: A generic dynamic object loading library
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: A generic dynamic object loading library
+http://www.gnu.org/software/libtool/
+@@
+
+Package: libcurl
+Version: 1.2.3-5
+Depends: +libopenssl +zlib
+Provides: 
+Section: libs
+Category: Libraries
+Title: A client-side URL transfer library
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: A client-side URL transfer library
+http://curl.haxx.se/
+@@
+
+Package: curl
+Version: 1.2.3-5
+Depends: +libcurl
+Provides: 
+Section: net
+Category: Network
+Title: A client-side URL transfer utility
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: A client-side URL transfer utility
+http://curl.haxx.se/
+@@
+
+Package: sdk_base
+Version: 1.2.3-5
+Depends: +libreadline +zlib +librt +libpthread +libopenssl +libtool +libcurl +curl
+Provides: 
+Section: base
+Category: Base system
+Title: Option Firmware Dependencies
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: Option Firmware Dependencies
+@@
+
+

@@ -1,0 +1,16 @@
+Source-Makefile: package/sms/Makefile
+Package: sms
+Version: 1.0
+Depends: +libcg +libjson-c
+Provides: 
+Build-Depends: !BUILD_NLS:libiconv !BUILD_NLS:gettext
+Section: base
+Category: Base system
+Title: SMS Proxy
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: SMS Proxy
+@@
+
+

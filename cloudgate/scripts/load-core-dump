@@ -1,0 +1,89 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use FindBin '$Bin';
+use File::Temp 'tempfile';
+use File::Basename;
+
+@ARGV == 2 || do {
+	die "Usage: $0 <executable> <core-dump>\n";
+	exit 1;
+};
+
+if( opendir SD, "$Bin/../staging_dir" )
+{
+	my ( $tid, $arch, $libc, @arches );
+
+	if( $ARGV[0] =~ m!\btarget-(.+?)_([^_]+libc[^_/]+)\b!i )
+	{
+		print("Using target $1 ($2)\n");
+		($arch, $libc) = ($1, $2);
+	}
+	else
+	{
+		# Find arches
+		print("Choose target:\n");
+
+		while( defined( my $e = readdir SD ) )
+		{
+			if( -d "$Bin/../staging_dir/$e" && $e =~ /^target-(.+?)_([^_]+libc[^_]+)/i )
+			{
+				push @arches, [ $1, $2 ];
+				printf(" %2d) %s (%s)\n", @arches + 0, $1, $2);
+			}
+		}
+
+		if( @arches > 1 )
+		{
+			# Query arch
+			do {
+				print("Target? > ");
+				chomp($tid = <STDIN>);
+			} while( !defined($tid) || $tid !~ /^\d+$/ || $tid < 1 || $tid > @arches );
+
+			($arch, $libc) = @{$arches[$tid-1]};
+		}
+		else
+		{
+			($arch, $libc) = @{$arches[0]};
+		}
+	}
+
+	closedir SD;
+
+	# Find gdb
+	my ($gdb) = glob("$Bin/../staging_dir/toolchain-${arch}_*_${libc}*/bin/*-gdb");
+
+	if( defined($gdb) && -x $gdb )
+	{
+		my ( $fh, $fp ) = tempfile();
+
+		# Find sysroot
+		my ($sysroot) = glob("$Bin/../staging_dir/target-${arch}_${libc}*/root-*/");
+
+		# check if we have used the correct sysroot
+		my $file = -f "$sysroot/$ARGV[0]" ? "$sysroot/$ARGV[0]" : $ARGV[0];
+		$sysroot = -f "$sysroot/$ARGV[0]" ? $sysroot : dirname($ARGV[0])."/../../";              
+		
+		print "using sysroot: $sysroot\n";
+
+		print $fh "set sysroot $sysroot\n" if $sysroot;
+		print $fh "core-file $ARGV[1]\n";
+
+		system($gdb, '-x', $fp, $file);
+
+		close($fh);
+		unlink($fp);
+	}
+	else
+	{
+		print("No gdb found! Make sure that CONFIG_GDB is set!\n");
+		exit(1);
+	}
+}
+else
+{
+	print("No staging_dir found! You need to compile at least once!\n");
+	exit(1);
+}

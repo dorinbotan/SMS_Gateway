@@ -1,0 +1,16 @@
+Source-Makefile: package/alibaba/Makefile
+Package: alibaba
+Version: 1.0
+Depends: +libcg
+Provides: 
+Build-Depends: !BUILD_NLS:libiconv !BUILD_NLS:gettext
+Section: base
+Category: Base system
+Title: SMS Proxy
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: SMS Proxy
+@@
+
+

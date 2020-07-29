@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+
+WRAPPER_LIBDIR="${WRAPPER_LIBDIR:=-L/home/jenkins/jenkins/workspace/target_m2mbox_trunk_master__releases/staging_dir/target-arm_v5te_uClibc-0.9.33.2_eabi/usr/lib/}"
+
+WRAPPER_OPTIONS=""
+WRAPPER_LIBS=" -L/home/jenkins/jenkins/workspace/target_m2mbox_trunk_master__releases/staging_dir/toolchain-arm_v5te_gcc-4.4.3_uClibc-0.9.33.2_eabi/lib/gcc/arm-openwrt-linux-uclibcgnueabi/4.4.3/ -lc -lgcc -Wl,--as-needed -lgcc_s -Wl,--no-as-needed"
+
+WRAPPER_INCLIB="Y"
+while [ -n "$1" ]
+do
+	WRAPPER_OPTIONS="$WRAPPER_OPTIONS $1"
+	if [ "$1" = "-c" -o "$1" = "-E" -o "$1" = "-S" -o "$1" = "-MF" ]
+	then
+		WRAPPER_INCLIB="N"
+	fi
+	if [ "$1" == "-static" ]
+	then
+		WRAPPER_LIBS=" -L/home/jenkins/jenkins/workspace/target_m2mbox_trunk_master__releases/staging_dir/toolchain-arm_v5te_gcc-4.4.3_uClibc-0.9.33.2_eabi/lib/gcc/arm-openwrt-linux-uclibcgnueabi/4.4.3/ -lc -lgcc -lgcc_eh"
+	fi
+	shift
+done
+if [ "$WRAPPER_INCLIB" == "Y" ]
+then
+	WRAPPER_OPTIONS="$WRAPPER_OPTIONS -nodefaultlibs $WRAPPER_LIBDIR -Wl,-Bdynamic,-luClibc++,-Bstatic,-lstdc++,-Bdynamic $WRAPPER_LIBS"
+fi
+
+exec arm-openwrt-linux-uclibcgnueabi-g++ -fno-builtin  -DGCC_HASCLASSVISIBILITY  $WRAPPER_INCLUDEDIR $WRAPPER_OPTIONS

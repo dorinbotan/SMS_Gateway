@@ -1,0 +1,8 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/GobiImageMgmt
+./usr/include/GobiImageMgmt/GobiImageMgmtAPI.h
+./usr/lib
+./usr/lib/libGobiImageMgmt.so

@@ -1,0 +1,8 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/winnie
+./usr/include
+./usr/include/winnie
+./usr/include/winnie/winnie.h

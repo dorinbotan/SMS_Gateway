@@ -1,0 +1,6 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/conman
+./usr/include/conman/cm_data_structures.h

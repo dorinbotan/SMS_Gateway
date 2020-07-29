@@ -1,0 +1,17 @@
+./
+./host
+./usr
+./usr/bin
+./usr/bin/unittest_wwan
+./usr/bin/unittest_gps
+./usr/bin/unittest_device
+./usr/bin/unittest_wwan_umts
+./usr/bin/unittest_hal
+./usr/bin/unittest_wwan_umts_pin
+./usr/bin/unittest_general
+./usr/bin/unittest_kvpair
+./usr/bin/unittest_net
+./usr/bin/unittest_conf
+./usr/bin/unittest_wlan
+./usr/bin/unittest_sms
+./usr/bin/unittest_net_ipsec

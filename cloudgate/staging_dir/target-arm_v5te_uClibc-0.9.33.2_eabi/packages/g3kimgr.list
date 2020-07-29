@@ -1,0 +1,10 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/g3kimgr
+./usr/include/g3kimgr/gobi_img.h
+./usr/include/g3kimgr/gobi_efs.h
+./usr/include/g3kimgr/g3kimgr.h
+./usr/lib
+./usr/lib/libgobi_img.so

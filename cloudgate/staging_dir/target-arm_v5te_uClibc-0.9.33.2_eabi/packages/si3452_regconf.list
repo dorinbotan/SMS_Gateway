@@ -1,0 +1,10 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/si3452_regconf
+./usr/include
+./usr/include/si3452
+./usr/include/si3452/si3452.h
+./usr/lib
+./usr/lib/libSi3452.so

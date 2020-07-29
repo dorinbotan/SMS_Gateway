@@ -1,0 +1,15 @@
+Package: alibaba
+Version: 1.0
+Depends: libcg
+Provides: 
+Source: package/alibaba
+Section: base
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: imx28
+Installed-Size: 432031
+Filename: alibaba_1.0_imx28.ipk
+Size: 201739
+MD5Sum: 4f38faf593677f5856dfb84103a97d3c
+Description:  SMS Proxy
+

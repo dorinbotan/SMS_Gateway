@@ -1,0 +1,10 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/lizzylog
+./usr/include/lizzylog/log_types.h
+./usr/include/lizzylog/log.h
+./usr/include/lizzylog/log_config.h
+./usr/lib
+./usr/lib/liblizzylog.so

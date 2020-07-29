@@ -1,0 +1,21 @@
+Source-Makefile: package/libpcap/Makefile
+Package: libpcap
+Menu: 1
+Version: 1.3.0-2
+Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Title: Low-level packet capture library
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: libpcap-1.3.0.tar.gz
+Type: ipkg
+Description: This package contains a system-independent library for user-level network packet
+capture.
+http://www.tcpdump.org/
+@@
+Config:
+	source "package/libpcap/Config.in"
+@@
+
+

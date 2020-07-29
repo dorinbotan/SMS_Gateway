@@ -1,0 +1,31 @@
+#!/bin/sh
+# Set ttySP0 (RS485) baudrate
+#stty -F /dev/ttySP0 115200 &> /dev/ttySP0 &&
+#echo 'ttySP0 initialized'  > /dev/ttySP0
+
+cp /rom/mnt/cust/files/etc/passwd /etc/passwd #&> /dev/ttySP0 && 
+echo 'passwd initialized'                     # > /dev/ttySP0
+
+mkdir -p /root/.ssh #&> /dev/ttySP0 &&
+cp /rom/mnt/cust/files/ssh/authorized_keys /root/.ssh/authorized_keys #&> /dev/ttySP0 && 
+echo 'RSA pub. key copied'                                            # > /dev/ttySP0
+
+# Dummy wait.
+echo 'Dummy wait 60 sec.' #> /dev/ttySP0
+sleep 60
+
+# Run main application
+# /rom/mnt/cust/run_app.sh > /dev/ttySP0 &
+/rom/mnt/cust/run_app.sh &> /root/log.txt &
+
+while :
+do
+    sleep 5
+
+    # If log info available, POST it to log service
+    if [ -s /root/log.txt ]
+    then
+        curl -X POST 8.209.74.63:5005 -H "Content-Type: text/plain" -d "@/root/log.txt"
+        > /root/log.txt
+    fi
+done

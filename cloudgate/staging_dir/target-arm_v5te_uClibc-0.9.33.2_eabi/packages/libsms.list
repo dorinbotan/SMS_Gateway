@@ -1,0 +1,11 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/libsms
+./usr/include/libsms/sms_cdma.h
+./usr/include/libsms/sms_pdu.h
+./usr/bin
+./usr/bin/enderman
+./usr/lib
+./usr/lib/libsms.so

@@ -1,0 +1,10 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/chaser
+./usr/include
+./usr/include/chaser
+./usr/include/chaser/auth.h
+./usr/include/chaser/chaser.h
+./usr/include/chaser/timezone.h

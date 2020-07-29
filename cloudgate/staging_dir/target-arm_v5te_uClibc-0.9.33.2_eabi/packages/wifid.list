@@ -1,0 +1,8 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/wifid
+./usr/include
+./usr/include/wifi
+./usr/include/wifi/wifi.h

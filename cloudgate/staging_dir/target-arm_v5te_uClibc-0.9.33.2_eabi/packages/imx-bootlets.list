@@ -1,0 +1,11 @@
+./
+./host
+./lib
+./lib/boot_prep
+./lib/power_prep
+./lib/linux_prep
+./lib/linux_ivt.bd
+./lib/linux.bd
+./lib/power_prep.map
+./lib/boot_prep.map
+./lib/uboot_ivt.bd

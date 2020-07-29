@@ -1,0 +1,16 @@
+./
+./bin
+./bin/unittest-filter
+./host
+./usr
+./usr/sbin
+./usr/sbin/devman
+./usr/sbin/smsc9500.sh
+./usr/include
+./usr/include/devman
+./usr/include/devman/libdevice.h
+./usr/include/devman/libdevice_types.h
+./usr/include/devman/tlv_rcv.h
+./usr/include/devman/devman.h
+./usr/lib
+./usr/lib/libdevice.so

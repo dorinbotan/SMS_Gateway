@@ -1,0 +1,13 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/periph_reset
+./usr/sbin/reset_reason.sh
+./usr/sbin/resetman
+./usr/include
+./usr/include/reset
+./usr/include/reset/libreset_reason.h
+./usr/include/reset/resetman.h
+./usr/lib
+./usr/lib/libreset_reason.so

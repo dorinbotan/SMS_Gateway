@@ -1,0 +1,33 @@
+package-$(CONFIG_PACKAGE_alibaba) += alibaba
+package-$(CONFIG_PACKAGE_curl) += sdk_base
+package-$(CONFIG_PACKAGE_dallas-sdk) += dallas-sdk
+package-$(CONFIG_PACKAGE_gdb) += gdb
+package-$(CONFIG_PACKAGE_gdbserver) += gdb
+package-$(CONFIG_PACKAGE_libcg-examples) += libcg-examples
+package-$(CONFIG_PACKAGE_libcg-sqlite_examples) += libcg-sqlite_examples
+package-$(CONFIG_PACKAGE_libcurl) += sdk_base
+package-$(CONFIG_PACKAGE_libcyassl) += cyassl
+package-$(CONFIG_PACKAGE_liblua) += lua
+buildtypes-lua = host
+package-$(CONFIG_PACKAGE_libncurses) += ncurses
+package-$(CONFIG_PACKAGE_libnl) += libnl
+package-$(CONFIG_PACKAGE_libopenssl) += sdk_base
+package-$(CONFIG_PACKAGE_libpcap) += libpcap
+package-$(CONFIG_PACKAGE_libpthread) += sdk_base
+package-$(CONFIG_PACKAGE_libreadline) += sdk_base
+package-$(CONFIG_PACKAGE_librt) += sdk_base
+package-$(CONFIG_PACKAGE_libtool) += sdk_base
+package-$(CONFIG_PACKAGE_lua) += lua
+package-$(CONFIG_PACKAGE_lua-examples) += lua
+package-$(CONFIG_PACKAGE_luac) += lua
+package-$(CONFIG_PACKAGE_opkg) += opkg
+package-$(CONFIG_PACKAGE_sdk_base) += sdk_base
+package-$(CONFIG_PACKAGE_zlib) += sdk_base
+
+$(curdir)/gdb/compile += $(curdir)/ncurses/compile $(curdir)/sdk_base/compile
+$(curdir)/cyassl/compile += $(curdir)/sdk_base/compile
+$(curdir)/opkg/compile += $(curdir)/sdk_base/compile
+
+$(curdir)/gdb/unit += $(curdir)/ncurses/unit $(curdir)/sdk_base/unit
+$(curdir)/cyassl/unit += $(curdir)/sdk_base/unit
+$(curdir)/opkg/unit += $(curdir)/sdk_base/unit

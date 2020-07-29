@@ -1,0 +1,108 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background: #edeef0;
+}
+
+#message_history {
+    height: 99vh;
+    width: 550px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px #e3e4e8;
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+#message_feed {
+    max-height: 100%;
+    overflow: auto;
+    margin-top: auto;
+    /* border: 1px solid green; */
+}
+
+#message_input {
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    background: #fafbfc;
+    padding: 10px;
+}
+
+#message_input form {
+    display: grid;
+    grid-template-areas:
+    "1"
+    "2";
+    grid-gap: 10px;
+}
+
+#message_input form input {
+    border-radius: 6px;
+    border: solid 1px #d3d9de;
+    font-size: 0.9em;
+
+    padding: 9px 0 9px 13px;
+}
+
+.message_header {
+    display: flex;
+}
+
+.message_sender,
+.message_receiver {
+    font-weight: 600;
+    font-size: 0.7em;
+    color: #42648b;
+    font-weight: 600;
+    padding: 6px 0 0 20px;
+}
+.message_timestamp {
+    font-size: 0.7em;
+    color: hsla(220, 8%, 51%, .6);
+    font-weight: 400;
+    padding: 6px 0 0 10px;
+}
+.message {
+    padding: 4px 20px 14px 20px;
+    font-weight: 100;
+    font-size: 0.9em;
+    /* border: 1px solid green; */
+}
+
+@media only screen 
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+    #message_history {
+        height: calc(var(--vh, 1vh) * 100);
+        width: 100vw;
+    }
+
+    #message_input {
+        box-shadow: 0 3px 0 0 #d7d8db, 0 0 0 3px #e3e4e8;
+        padding: 20px;
+    }
+
+    #message_input form {
+        grid-gap: 20px;
+    }
+
+    #message_input form input {
+        border: solid 3px #d3d9de;
+        font-size: 2.7em;
+    }
+
+    .message_sender,
+    .message_receiver,
+    .message_timestamp {
+        font-size: 1.7em;
+    }
+    .message {
+        font-size: 2.7em;
+        font-weight: 200;
+    }
+}

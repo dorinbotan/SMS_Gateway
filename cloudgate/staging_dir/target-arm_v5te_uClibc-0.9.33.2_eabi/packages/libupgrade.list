@@ -1,0 +1,7 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/upgrade.h
+./usr/lib
+./usr/lib/libupgrade.so

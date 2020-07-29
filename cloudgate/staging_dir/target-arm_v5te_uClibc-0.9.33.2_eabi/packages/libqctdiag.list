@@ -1,0 +1,14 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/qctdiag
+./usr/include/qctdiag/qctefs.h
+./usr/include/qctdiag/qctnv.h
+./usr/include/qctdiag/qctcommon.h
+./usr/include/qctdiag/qcthdr.h
+./usr/include/qctdiag/serial.h
+./usr/include/qctdiag/qctlog.h
+./usr/include/qctdiag/qctprl.h
+./usr/lib
+./usr/lib/libqctdiag.so

@@ -1,0 +1,40 @@
+<h1>Example ui_simple</h1>
+
+<form method="get" action="/api/libcg/simple_json_backend" id="example_form_1">
+	<input type="button" value="Send JSON callback" id="btnSendCallback" /><br />
+	<input type="text" name="user"><input type="submit" value="Submit"><br />
+	<span>JSON Callback result</span> <div id="txtResult"></div>
+</form>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#btnSendCallback").click(function(){
+		var data = {test: "test", test2: "test2"};
+		libcg_page_cb("simple_json_backend", data, handle_json_cb_success, handle_json_cb_error);
+	});
+});
+
+function handle_json_cb_success(data){
+	$('#txtResult').html("POST CB succeeded: " + JSON.stringify(data));
+}
+
+function handle_json_cb_error(textStatus){
+	$('#txtResult').html("POST CB failed: " + textStatus);
+}
+
+/*This function can be used to interface the JSON callback in a straightforward way.*/
+function libcg_page_cb(identifier, json_data, callback_handler_success, callback_handler_error){
+	if(identifier != null && identifier != undefined){
+		var cb_url = "/api/libcg/" + identifier;
+		$.ajax({
+			url: cb_url,
+			type: "POST",
+			data: JSON.stringify(json_data),
+			dataType: "json",
+			contentType: "application/json; charset=utf-8",
+			success: callback_handler_success,
+			error: callback_handler_error
+		});
+	}
+}
+</script>

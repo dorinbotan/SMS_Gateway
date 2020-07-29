@@ -1,0 +1,20 @@
+{
+  "name": "alibaba_paho",
+  "version": "1.0.0",
+  "description": "Dummy description",
+  "main": "index.js",
+  "dependencies": {
+    "@alicloud/pop-core": "^1.7.6",
+    "aliyun-iot-mqtt": "0.0.4",
+    "aliyun-sdk": "^1.12.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

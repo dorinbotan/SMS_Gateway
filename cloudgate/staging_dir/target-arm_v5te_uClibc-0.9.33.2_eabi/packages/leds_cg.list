@@ -1,0 +1,7 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/leds_cg
+./usr/include/leds_cg/leds_cg_internal.h
+./usr/include/leds_cg/leds_cg.h

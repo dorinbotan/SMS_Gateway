@@ -1,0 +1,230 @@
+# Copyright (C) 2006-2009 OpenWrt.org
+#
+# This is free software, licensed under the GNU General Public License v2.
+# See /LICENSE for more information.
+#
+
+config HAVE_DOT_CONFIG
+	bool
+	default y
+
+config TARGET_imx28
+	bool
+	default y
+
+config TARGET_imx28_customer
+	bool
+	default y
+
+config TARGET_imx28_customer_Default
+	bool
+	default y
+
+config HAS_SUBTARGETS
+	bool
+	default y
+
+config TARGET_BOARD
+	string
+	default "imx28"
+
+config BUILD_NLS
+	bool
+	default y
+
+config DEFAULT_TARGET_OPTIMIZATION
+	string
+	default "-Os -pipe -march=armv5te -mtune=xscale -funit-at-a-time"
+
+config LINUX_2_6_35
+	bool
+	default y
+
+config LINUX_2_6
+	bool
+	default y
+
+config AUDIO_SUPPORT
+	bool
+	default y
+
+config GPIO_SUPPORT
+	bool
+	default y
+
+config USB_SUPPORT
+	bool
+	default y
+
+config USES_SQUASHFS
+	bool
+	default y
+
+config arm
+	bool
+	default y
+
+config ARCH
+	string
+	default "arm"
+
+config USE_SSTRIP
+	bool
+	default y
+
+config DEVEL
+	bool
+	default y
+
+config DOWNLOAD_FOLDER
+	string
+	default ""
+
+config LOCALMIRROR
+	string
+	default ""
+
+config AUTOREBUILD
+	bool
+	default y
+
+config BUILD_SUFFIX
+	string
+	default ""
+
+config TARGET_ROOTFS_DIR
+	string
+	default ""
+
+config CCACHE
+	bool
+	default y
+
+config EXTERNAL_KERNEL_TREE
+	string
+	default ""
+
+config KERNEL_GIT_CLONE_URI
+	string
+	default ""
+
+config KERNEL_GIT_LOCAL_REPOSITORY
+	string
+	default ""
+
+config TARGET_OPTIMIZATION
+	string
+	default "-Os -pipe -march=armv5te -mtune=xscale -funit-at-a-time"
+
+config SOFT_FLOAT
+	bool
+	default y
+
+config NEED_TOOLCHAIN
+	bool
+	default y
+
+config TOOLCHAINOPTS
+	bool
+	default y
+
+config EABI_SUPPORT
+	bool
+	default y
+
+config BINUTILS_VERSION_2_20_1
+	bool
+	default y
+
+config EXTRA_BINUTILS_CONFIG_OPTIONS
+	string
+	default ""
+
+config BINUTILS_VERSION
+	string
+	default "2.20.1"
+
+config GCC_VERSION_4_4_3
+	bool
+	default y
+
+config EXTRA_GCC_CONFIG_OPTIONS
+	string
+	default ""
+
+config INSTALL_LIBSTDCPP
+	bool
+	default y
+
+config USE_UCLIBC
+	bool
+	default y
+
+config UCLIBC_VERSION_0_9_33_2
+	bool
+	default y
+
+config GDB
+	bool
+	default y
+
+config GCC_VERSION
+	string
+	default "4.4.3"
+
+config GCC_VERSION_4
+	bool
+	default y
+
+config GCC_VERSION_4_4
+	bool
+	default y
+
+config UCLIBC_VERSION
+	string
+	default "0.9.33.2"
+
+config LIBC
+	string
+	default "uClibc"
+
+config LIBC_VERSION
+	string
+	default "0.9.33.2"
+
+config TARGET_SUFFIX
+	string
+	default "uclibcgnueabi"
+
+config TARGET_ROOTFS_SQUASHFS
+	bool
+	default y
+
+config KERNEL_SIGN_KEYPATH
+	string
+	default "keys/devel-priv.pem"
+
+config PACKAGE_sdk_base
+	bool
+	default y
+
+source "target/Config.in"
+
+menu "Target Images"
+
+	comment "Image Options"
+
+	source "target/linux/*/image/Config.in"
+
+endmenu
+
+menu "Image Attribute Settings"
+
+	comment "Alter the image attribute settings"
+
+	source "target/linux/*/image/Config.in.attributes"
+
+endmenu
+
+source "tmp/.config-package.in"
+

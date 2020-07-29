@@ -1,0 +1,6 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/lost
+./usr/include/lost/lost_external.h

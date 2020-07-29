@@ -1,0 +1,8 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/wifid_redpine_sta
+./usr/include
+./usr/include/wifi
+./usr/include/wifi/wifi.h

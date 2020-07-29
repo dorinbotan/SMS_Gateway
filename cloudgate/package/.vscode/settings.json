@@ -1,0 +1,5 @@
+{
+    "files.associations": {
+        "iot_platform.h": "c"
+    }
+}

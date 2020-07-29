@@ -1,0 +1,9 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/dustd
+./usr/include
+./usr/include/dustd
+./usr/include/dustd/dust_sensor.h
+./usr/include/dustd/dust_sensor_access.h

@@ -1,0 +1,75 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#btnSave").click(function(){
+		var name = $('#txtName').val();
+
+		/* Create your json data */
+		var data = {"myName": name};
+		libcg_page_cb("example_sqlite", data, handle_json_cb_success, handle_json_cb_error);
+		});
+});
+
+function handle_json_cb_success(data){
+	var json_data;
+	var sHtml = "";
+
+	if (data === null) {
+		sHtml = "Error retrieving data";
+	} else {
+		/* Parse the json data */
+		json_data = $.parseJSON(JSON.stringify(data));
+
+		sHtml = "<ul>";
+		$.each(json_data, function(index, record) {
+			sHtml += "<li>" + record.id + ": " + record.name + "</li>";
+		});
+		sHtml += "</ul>";
+	}
+
+	$('#myData').html(sHtml);
+}
+
+function handle_json_cb_error(textStatus){
+	$('#myData').html(textStatus);
+}
+
+function libcg_page_cb(identifier, json_data, callback_handler_success, callback_handler_error){
+	if(identifier != null && identifier != undefined){
+		var cb_url = "/api/libcg/" + identifier;
+		$.ajax({
+			url: cb_url,
+			type: "POST",
+			data: JSON.stringify(json_data),
+			dataType: "json",
+			contentType: "application/json; charset=utf-8",
+			success: callback_handler_success,
+			error: callback_handler_error
+		});
+	}
+}
+</script>
+
+<div class="well">
+	<div class="page-header">
+	  <h1>Demo sqlite</h1>
+	</div>
+
+	<form class="well form-horizontal" name="frm1">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">Please enter your name: </label>
+					<input type="text" name="txtName" class="input-mini" id="txtName" required>
+				</div>
+
+				<div class="form-actions">
+					<button class="btn btn-primary" id="btnSave">Save</button>
+				</div>
+			</fieldset>
+	</form>
+
+
+	<div id="myData">
+
+	</div>
+</div>
+

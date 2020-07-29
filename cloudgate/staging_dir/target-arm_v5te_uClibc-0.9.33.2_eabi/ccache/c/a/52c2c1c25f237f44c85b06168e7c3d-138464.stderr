@@ -1,0 +1,3 @@
+In file included from include/MQTTAsync.h:109,
+                 from mosquitto.c:8:
+include/MQTTProperties.h:111: warning: declaration does not declare anything

@@ -1,0 +1,10 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/iniparser
+./usr/include/iniparser/iniparser.h
+./usr/include/iniparser/dictionary.h
+./usr/lib
+./usr/lib/libiniparser.so
+./usr/lib/libiniparser.so.0

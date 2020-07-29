@@ -1,0 +1,24 @@
+Source-Makefile: package/libcg-sqlite_examples/Makefile
+Package: libcg-sqlite_examples
+Version: 1.0
+Depends: +libcg +libjson-c +libsqlite3
+Provides: 
+Section: base
+Category: Base system
+Title: SDK sqlite examples
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: This separate package contains the libcg examples that require sqlite.
+
+If you want to try this package you will first need to initialise the openWRT
+feeds and install the libsqlite3 package:
+
+	./scripts/feeds update
+	./scripts/feeds install libsqlite3
+
+After performing these commands in your SDK root directory you can enable
+this package and it will automatically select libsqlite3 too.
+@@
+
+

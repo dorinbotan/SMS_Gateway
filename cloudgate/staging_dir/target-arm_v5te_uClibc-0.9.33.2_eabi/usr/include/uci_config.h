@@ -1,0 +1,5 @@
+#define UCI_PREFIX "/usr"
+#define UCI_PLUGIN_SUPPORT 1
+#define UCI_COPY_ON_WRITE 1
+#undef UCI_DEBUG
+#undef UCI_DEBUG_TYPECAST

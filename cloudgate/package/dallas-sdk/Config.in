@@ -1,0 +1,21 @@
+# dallas-sdk package config
+
+menu "Configuration"
+	depends on PACKAGE_dallas-sdk
+
+config OPTION_OWIRE_LINK_LIB
+	bool "Compile and install OPTION owire link lib"
+	default y
+	help
+	 Compile and install libowirecortex.so .  If
+	 unsure, choose the default Y.
+
+config DALLAS_SDK_OWIRE_EXAMPLE_APP
+	string "Compile and install tstfind example application"
+	default "tstfind"
+    depends on OPTION_OWIRE_LINK_LIB
+	help
+	 Compile and install tstfind application .  If
+	 unsure, choose the default Y.
+
+endmenu

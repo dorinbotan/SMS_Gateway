@@ -1,0 +1,8 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/odd
+./usr/include
+./usr/include/odd
+./usr/include/odd/odd.h

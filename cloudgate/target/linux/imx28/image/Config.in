@@ -1,0 +1,4 @@
+config KERNEL_SIGN_KEYPATH
+	string "Private key used for signing"
+	default "keys/privkey01.pem"
+

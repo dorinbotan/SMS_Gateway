@@ -1,0 +1,9 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/telit-dumpreadery
+./usr/sbin/DownloadTool
+./usr/sbin/telit-trace-rcv
+./usr/lib
+./usr/lib/libDownloadTool.so

@@ -1,0 +1,6 @@
+This is an OpenWrt SDK built for the Option CloudGate Inteligent
+Gateway. It contains the toolchain necessary to build images for
+Cloudgate along with examples of how to use the CloudGate APIs.
+You can use it to test and develop images that can be loaded onto
+a CloudGate via the local UI or the provisioning server. Please
+refer to the documentation in the docs directory for more details.

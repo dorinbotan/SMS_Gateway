@@ -1,0 +1,11 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/mcmd
+./usr/include/mcmd/libat.h
+./usr/include/libmodemimg
+./usr/include/libmodemimg/libmodemimg.h
+./usr/lib
+./usr/lib/libmodemimg.so
+./usr/lib/libat.so

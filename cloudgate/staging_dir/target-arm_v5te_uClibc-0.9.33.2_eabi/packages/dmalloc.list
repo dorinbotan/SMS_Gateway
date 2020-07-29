@@ -1,0 +1,8 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/dmalloc.h
+./usr/lib
+./usr/lib/libdmalloc.a
+./usr/lib/libdmalloc.so.5.5.2

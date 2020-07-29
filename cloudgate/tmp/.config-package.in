@@ -1,0 +1,279 @@
+menuconfig IMAGEOPT
+	bool "Image configuration"
+	default n
+source "package/*/image-config.in"
+menu "Base system"
+
+	config PACKAGE_alibaba
+		tristate "alibaba........................................................ SMS Proxy"
+		default y if DEFAULT_alibaba
+		default m if ALL
+		select PACKAGE_libcg
+		help
+		 SMS Proxy
+
+	config PACKAGE_libcg-examples
+		tristate "libcg-examples.............................................. SDK Examples"
+		default y if DEFAULT_libcg-examples
+		default m if ALL
+		select PACKAGE_libcg
+		select PACKAGE_libjson-c
+		help
+		 SDK Examples
+
+	config PACKAGE_libcg-sqlite_examples
+		tristate "libcg-sqlite_examples................................ SDK sqlite examples"
+		default y if DEFAULT_libcg-sqlite_examples
+		default m if ALL
+		select PACKAGE_libjson-c
+		select PACKAGE_libsqlite3
+		select PACKAGE_libcg
+		help
+		 This separate package contains the libcg examples that require sqlite.
+		 
+		 If you want to try this package you will first need to initialise the openWRT
+		 feeds and install the libsqlite3 package:
+		 
+		 	./scripts/feeds update
+		 	./scripts/feeds install libsqlite3
+		 
+		 After performing these commands in your SDK root directory you can enable
+		 this package and it will automatically select libsqlite3 too.
+
+	config PACKAGE_opkg
+		tristate "opkg...................................... opkg package management system"
+		default y if DEFAULT_opkg
+		default m if ALL
+		help
+		 Lightweight package management system
+		   opkg is the opkg Package Management System, for handling
+		   installation and removal of packages on a system. It can
+		   recursively follow dependencies and download all packages
+		   necessary to install a particular package.
+		 
+		   opkg knows how to install both .ipk and .deb packages.
+		 http://wiki.openmoko.org/wiki/Opkg
+
+	config PACKAGE_sdk_base
+		tristate "sdk_base.................................... Option Firmware Dependencies"
+		default y if DEFAULT_sdk_base
+		default m if ALL
+		select PACKAGE_zlib
+		select PACKAGE_libcurl
+		select PACKAGE_libpthread
+		select PACKAGE_libopenssl
+		select PACKAGE_curl
+		select PACKAGE_libtool
+		select PACKAGE_libreadline
+		select PACKAGE_librt
+		help
+		 Option Firmware Dependencies
+
+endmenu
+
+menu "iButton-3rd-party"
+
+	config PACKAGE_dallas-sdk
+		tristate "dallas-sdk....................................... Owire Public Domain Kit"
+		default y if DEFAULT_dallas-sdk
+		default m if ALL
+		select PACKAGE_kmod-cortex
+		help
+		 Owire Public Domain Kit
+		 http://files.maximintegrated.com/sia_bu/public/
+
+
+		source "package/dallas-sdk/Config.in"
+
+endmenu
+
+menu "Utilities"
+
+	config PACKAGE_gdb
+		tristate "gdb......................................................... GNU Debugger"
+		default y if DEFAULT_gdb
+		default m if ALL
+		select PACKAGE_libncurses
+		select PACKAGE_libreadline
+		depends !(avr32||cris)
+		help
+		 GDB, the GNU Project debugger, allows you to see what is going on `inside'
+		 another program while it executes -- or what another program was doing at the
+		 moment it crashed.
+
+	config PACKAGE_gdbserver
+		tristate "gdbserver................................. Remote server for GNU Debugger"
+		default y if DEFAULT_gdbserver
+		default m if ALL
+		depends !(avr32||cris)
+		help
+		 GDBSERVER is a program that allows you to run GDB on a different machine than the
+		 one which is running the program being debugged.
+
+endmenu
+
+menu "Libraries"
+
+menu "SSL"
+	config PACKAGE_libcyassl
+		tristate "libcyassl................................................. CyaSSL library"
+		default y if DEFAULT_libcyassl
+		default m if ALL
+		help
+		 CyaSSL is an SSL library optimized for small footprint, both on disk and for
+		 memory use.
+		 http://www.yassl.com/
+
+endmenu
+	config PACKAGE_libcurl
+		tristate "libcurl............................... A client-side URL transfer library"
+		default y if DEFAULT_libcurl
+		default m if ALL
+		select PACKAGE_libopenssl
+		help
+		 A client-side URL transfer library
+		 http://curl.haxx.se/
+
+	config PACKAGE_liblua
+		tristate "liblua.............................. Lua programming language (libraries)"
+		default y if DEFAULT_liblua
+		default m if ALL
+		help
+		 Lua is a powerful light-weight programming language designed for extending 
+		  applications. Lua is also frequently used as a general-purpose, stand-alone 
+		  language. Lua is free software.
+		  This package contains the Lua shared libraries, needed by other programs.
+		 http://www.lua.org/
+
+	config PACKAGE_libncurses
+		tristate "libncurses..................................... Terminal handling library"
+		default y if DEFAULT_libncurses
+		default m if ALL
+		help
+		 Terminal handling library
+		 http://www.gnu.org/software/ncurses/
+
+	config PACKAGE_libnl
+		tristate "libnl............................................. netlink socket library"
+		default y if DEFAULT_libnl
+		default m if ALL
+		help
+		 This package contains a library for applications dealing with netlink sockets
+		 http://people.suug.ch/~tgr/libnl/
+
+	config PACKAGE_libopenssl
+		tristate "libopenssl................................................... (libraries)"
+		default y if DEFAULT_libopenssl
+		default m if ALL
+		select PACKAGE_zlib
+		help
+		 (libraries)
+
+	menuconfig PACKAGE_libpcap
+		tristate "libpcap................................. Low-level packet capture library"
+		default y if DEFAULT_libpcap
+		default m if ALL
+		help
+		 This package contains a system-independent library for user-level network packet
+		 capture.
+		 http://www.tcpdump.org/
+
+
+		source "package/libpcap/Config.in"
+
+	config PACKAGE_libpthread
+		tristate "libpthread.......................................... POSIX thread library"
+		default y if DEFAULT_libpthread
+		default m if ALL
+		select PACKAGE_librt
+		help
+		 POSIX thread library
+
+	config PACKAGE_libreadline
+		tristate "libreadline................................ Command lines edition library"
+		default y if DEFAULT_libreadline
+		default m if ALL
+		help
+		 Command lines edition library
+		 http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
+
+	config PACKAGE_librt
+		tristate "librt................................ POSIX.1b RealTime extension library"
+		default y if DEFAULT_librt
+		default m if ALL
+		help
+		 POSIX.1b RealTime extension library
+
+	config PACKAGE_libtool
+		tristate "libtool......................... A generic dynamic object loading library"
+		default y if DEFAULT_libtool
+		default m if ALL
+		help
+		 A generic dynamic object loading library
+		 http://www.gnu.org/software/libtool/
+
+	config PACKAGE_zlib
+		tristate "zlib................. Library implementing the deflate compression method"
+		default y if DEFAULT_zlib
+		default m if ALL
+		help
+		 Library implementing the deflate compression method
+		 http://www.zlib.net/
+
+endmenu
+
+menu "Languages"
+
+menu "Lua"
+	config PACKAGE_lua
+		tristate "lua............................... Lua programming language (interpreter)"
+		default y if DEFAULT_lua
+		default m if ALL
+		select PACKAGE_liblua
+		help
+		 Lua is a powerful light-weight programming language designed for extending 
+		  applications. Lua is also frequently used as a general-purpose, stand-alone 
+		  language. Lua is free software.
+		  This package contains the Lua language interpreter.
+		 http://www.lua.org/
+
+	config PACKAGE_lua-examples
+		tristate "lua-examples......................... Lua programming language (examples)"
+		default y if DEFAULT_lua-examples
+		default m if ALL
+		depends PACKAGE_lua
+		help
+		 Lua is a powerful light-weight programming language designed for extending 
+		  applications. Lua is also frequently used as a general-purpose, stand-alone 
+		  language. Lua is free software.
+		  This package contains Lua language examples.
+		 http://www.lua.org/
+
+	config PACKAGE_luac
+		tristate "luac................................. Lua programming language (compiler)"
+		default y if DEFAULT_luac
+		default m if ALL
+		select PACKAGE_liblua
+		help
+		 Lua is a powerful light-weight programming language designed for extending 
+		  applications. Lua is also frequently used as a general-purpose, stand-alone 
+		  language. Lua is free software.
+		  This package contains the Lua language compiler.
+		 http://www.lua.org/
+
+endmenu
+endmenu
+
+menu "Network"
+
+	config PACKAGE_curl
+		tristate "curl.................................. A client-side URL transfer utility"
+		default y if DEFAULT_curl
+		default m if ALL
+		select PACKAGE_libcurl
+		help
+		 A client-side URL transfer utility
+		 http://curl.haxx.se/
+
+endmenu
+

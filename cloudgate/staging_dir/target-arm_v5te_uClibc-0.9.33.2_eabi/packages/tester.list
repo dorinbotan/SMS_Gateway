@@ -1,0 +1,13 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/tester
+./usr/include
+./usr/include/tester
+./usr/include/tester/test_runner.h
+./usr/include/tester/test.h
+./usr/bin
+./usr/bin/unittest-tester
+./usr/lib
+./usr/lib/libtester.so

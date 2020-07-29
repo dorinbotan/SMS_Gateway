@@ -1,0 +1,8 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/kobs-ng
+./usr/include
+./usr/include/dcp
+./usr/include/dcp/dcp_bootstream_ioctl.h

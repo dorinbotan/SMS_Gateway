@@ -1,0 +1,16 @@
+config ATTR_HARD_PERSISTENCE
+	bool "Sets the hard persistence attribute"
+	default n
+
+config ATTR_SOFT_PERSISTENCE
+	bool "Sets the soft persistence attribute."
+	default n
+
+config ATTR_MIN_FW_VERSION
+	string "Defines the minimum firmware version this image can be used with. E.g. 1.41. To disable, leave this field empty."
+	default ""
+
+config ATTR_MAX_FW_VERSION
+	string "Defines the maximum firmware version this image can be used with. E.g. 1.42. To disable, leave this field empty."
+	default ""
+

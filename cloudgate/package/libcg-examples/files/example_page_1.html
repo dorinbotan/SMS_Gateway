@@ -1,0 +1,38 @@
+<h1>Example page 1</h1>
+
+<form id="example_form_1">
+	<input type="button" value="Send callback" id="btnSendCallback" /><br /><br />
+	<span>Callback result</span> <div id="txtResult"></div>
+</form>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#btnSendCallback").click(function(){
+		var data = {test: "test", test2: "test2"};
+		libcg_page_cb("example_page_1", data, handle_json_cb_success, handle_json_cb_error);
+	});
+});
+
+function handle_json_cb_success(data){
+	$('#txtResult').html(JSON.stringify(data));
+}
+
+function handle_json_cb_error(textStatus){
+	$('#txtResult').html(textStatus);
+}
+
+function libcg_page_cb(identifier, json_data, callback_handler_success, callback_handler_error){
+	if(identifier != null && identifier != undefined){
+		var cb_url = "/api/libcg/" + identifier;
+		$.ajax({
+			url: encodeURIComponent(cb_url),
+			type: "POST",
+			data: JSON.stringify(json_data),
+			dataType: "json",
+			contentType: "application/json; charset=utf-8",
+			success: callback_handler_success,
+			error: callback_handler_error
+		});
+	}
+}
+</script>

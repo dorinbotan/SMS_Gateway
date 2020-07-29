@@ -1,0 +1,11 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/lipyd
+./usr/include
+./usr/include/lipyd
+./usr/include/lipyd/config.h
+./usr/include/lipyd/logging.h
+./usr/include/lipyd/logmanager.h
+./usr/include/lipyd/share_logger.h

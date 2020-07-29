@@ -1,0 +1,5 @@
+./
+./host
+./usr
+./usr/sbin
+./usr/sbin/rw_i2c_eeprom
