@@ -7,9 +7,9 @@ Section: base
 Priority: optional
 Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
 Architecture: imx28
-Installed-Size: 432031
+Installed-Size: 431773
 Filename: alibaba_1.0_imx28.ipk
-Size: 201739
-MD5Sum: 4f38faf593677f5856dfb84103a97d3c
+Size: 201575
+MD5Sum: 68ff459576fe353f1930375c828520dc
 Description:  SMS Proxy
 

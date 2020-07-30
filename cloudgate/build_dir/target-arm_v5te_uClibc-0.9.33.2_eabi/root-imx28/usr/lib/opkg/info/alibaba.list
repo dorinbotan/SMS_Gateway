@@ -3,5 +3,4 @@
 /isv
 /files/ssh/.gitignore
 /files/ssh/authorized_keys
-/files/etc/passwd
 /files/etc/.gitignore

@@ -24,10 +24,10 @@ package-$(CONFIG_PACKAGE_opkg) += opkg
 package-$(CONFIG_PACKAGE_sdk_base) += sdk_base
 package-$(CONFIG_PACKAGE_zlib) += sdk_base
 
-$(curdir)/gdb/compile += $(curdir)/ncurses/compile $(curdir)/sdk_base/compile
+$(curdir)/gdb/compile += $(curdir)/sdk_base/compile $(curdir)/ncurses/compile
 $(curdir)/cyassl/compile += $(curdir)/sdk_base/compile
 $(curdir)/opkg/compile += $(curdir)/sdk_base/compile
 
-$(curdir)/gdb/unit += $(curdir)/ncurses/unit $(curdir)/sdk_base/unit
+$(curdir)/gdb/unit += $(curdir)/sdk_base/unit $(curdir)/ncurses/unit
 $(curdir)/cyassl/unit += $(curdir)/sdk_base/unit
 $(curdir)/opkg/unit += $(curdir)/sdk_base/unit

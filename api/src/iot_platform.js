@@ -8,14 +8,15 @@ const options = {
     regionId:     'cn-shanghai'
 };
 
-const TOPIC_SMS_IN  = `/${options.productKey}/${options.deviceName}/sms/in`;
-const TOPIC_SMS_OUT = `/${options.productKey}/${options.deviceName}/sms/out`;
+const TOPIC_SMS_IN  = `/${options.productKey}/${options.deviceName}/user/sms/in`;
+const TOPIC_SMS_OUT = `/${options.productKey}/${options.deviceName}/user/sms/out`;
 
 var client;
 
 module.exports = {
-    connect: function(callback) {
+    connect: function (callback) {
         client = mqtt.getAliyunIotMqttClient(options);
+        client.subscribe(TOPIC_SMS_IN);
 
         if (callback) {
             client.on('connect', callback);
@@ -49,7 +50,7 @@ module.exports = {
             message: '...'
         }
     */
-    publish: function(message, options = {}, callback = () => {}) {
+    publish: function (message, options = {}, callback = () => { }) {
         if (!client) return;
 
         if (typeof(message) == 'object') {

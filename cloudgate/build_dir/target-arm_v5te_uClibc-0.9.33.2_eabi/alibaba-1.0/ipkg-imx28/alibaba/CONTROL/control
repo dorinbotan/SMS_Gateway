@@ -7,5 +7,5 @@ Section: base
 Priority: optional
 Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
 Architecture: imx28
-Installed-Size: 432031
+Installed-Size: 431773
 Description:  SMS Proxy
