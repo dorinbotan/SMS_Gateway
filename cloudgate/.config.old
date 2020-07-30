@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # OpenWrt version: Backfire (unknown)
-# Wed Jul 29 00:29:57 2020
+# Wed Jul 29 10:21:56 2020
 #
 CONFIG_HAVE_DOT_CONFIG=y
 CONFIG_TARGET_imx28=y
