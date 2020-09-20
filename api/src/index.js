@@ -5,11 +5,16 @@ const CORS = require('./cors');
 const message_feed = require('./message_feed');
 const express = require('express');
 const bodyParser = require('body-parser');
+const basicAuth = require('express-basic-auth');
 
 const PORT = 80;
 
 var app = express();
 
+app.use(basicAuth({
+    users: { 'grundfos': '5s2p7Kffy6jcwlHoGwmyr7IZCbqmAYtPXoWjQ0UmaGl' },
+    challenge: true
+}));
 app.use(CORS);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
