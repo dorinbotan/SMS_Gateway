@@ -12,7 +12,7 @@ const PORT = 80;
 var app = express();
 
 app.use(basicAuth({
-    users: { 'grundfos': '5s2p7Kffy6jcwlHoGwmyr7IZCbqmAYtPXoWjQ0UmaGl' },
+    users: { [process.env.ID]: process.env.TOKEN },
     challenge: true
 }));
 app.use(CORS);

@@ -9,7 +9,7 @@
 #include "sms.h"
 #include "iot_platform.h"
 
-/* {"Receiver":"+4529176086", "Message":"Hello from IoT Platform debug console"} */
+/* {"Receiver":"+4500000000", "Message":"Hello from IoT Platform debug console"} */
 void iot_platform_received_callback(char *content)
 {
     #ifdef DEBUG
