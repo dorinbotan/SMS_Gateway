@@ -6,4 +6,4 @@ Since Twilio is not available in China, you can use the [Option CloudGate](https
 `ID=00000 TOKEN=00000 index.js`
 
 ### To configure the edge device
-See [README.md](https://github.com/dorinbotan/SMS_Gateway/edit/master/cloudgate/package/alibaba/README.md)
+See [README.md](https://github.com/dorinbotan/SMS_Gateway/tree/master/cloudgate/package/alibaba)
